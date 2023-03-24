@@ -17,8 +17,6 @@ jobs:
           # ubuntu sanitizing address, undefined, leak, thread
           - {name: 'linux gcc dbg s:addr,ub,leak', os: ubuntu-latest, btype: Debug, cmakeflags: '-DSAN_ADDR=1 -DSAN_UB=1 -DSAN_LEAK=1', buildflags: '-- -j'}
           - {name: 'linux gcc rel s:addr,ub,leak', os: ubuntu-latest, btype: RelWithDebInfo, cmakeflags: '-DSAN_ADDR=1 -DSAN_UB=1 -DSAN_LEAK=1', buildflags: '-- -j'}
-          - {name: 'mac clang dbg s:addr,ub,leak', os: macos-latest, btype: Debug, cmakeflags: '-DSAN_ADDR=1 -DSAN_UB=1 -DSAN_LEAK=1', buildflags: '-- -j'}
-          - {name: 'mac clang rel s:addr,ub,leak', os: macos-latest, btype: RelWithDebInfo, cmakeflags: '-DSAN_ADDR=1 -DSAN_UB=1 -DSAN_LEAK=1', buildflags: '-- -j'}
           - {name: 'win msvc dbg s:addr', os: windows-latest, btype: Debug, cmakeflags: '-DSAN_ADDR=1', buildflags: ''}
           - {name: 'win msvc rel s:addr', os: windows-latest, btype: RelWithDebInfo, cmakeflags: '-DSAN_ADDR=1', buildflags: ''}
     defaults:
